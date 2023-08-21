@@ -23,3 +23,27 @@ Once modified using TchExploit you must use an override flag as the router does 
 
 ![image](https://github.com/94alexmm/tg587nv3/assets/15701642/29c1156d-2de1-4996-8d3a-72528b53bc53)
 
+## Installing new packages
+Open the opkg config
+```
+vi /etc/opkg.conf
+```
+
+Replace repo URL with non technicolor URL
+```
+https://archive.openwrt.org/attitude_adjustment/12.09/brcm63xx/generic/packages
+```
+Save
+
+Run 
+```
+opkg update
+```
+
+Add the following lines (Need to change architecture src = https://alastair.d-silva.org/technicolor-tg789vac-v2-root-access)
+```
+arch all 1
+arch noarch 1
+arch brcm63xx 3
+arch brcm63xx-tch 10
+```
